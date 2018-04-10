@@ -1,0 +1,40 @@
+{% extends 'base_layout.html'%}
+{% block content%}
+
+
+<div class="article_container">
+    <h1>标题</h1>
+    <p>
+        作者:<span>{{content.user.username}}</span>
+        时间：<span>{{content.addTime|date('Y年m月d日 H:i:s',-60*8)}}</span>
+        阅读：<span>{{content.views}}</span>
+        评论：<span>{{content.username}}</span>
+    </p>
+
+    <p>
+        {{content.content}}
+    </p>
+
+</div>
+
+{% if userInfo._id %}
+<div class="article_evaluation">
+
+    <textarea id="commentContent"></textarea>
+    <button id="btnComment">提交</button>
+    <input type="hidden" id="article_id" value="{{content.id}}">
+
+
+    <div id="messageList"></div>
+</div>
+
+{% else%}
+<div class="article_evaluation">
+    <h1>您没有登录，先登录去</h1>
+
+</div>
+
+{% endif%}
+
+<script src="/public/js/article.js"></script>
+{% endblock %}

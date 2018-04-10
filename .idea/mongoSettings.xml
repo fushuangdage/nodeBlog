@@ -4,11 +4,13 @@
     <option name="serverConfigurations">
       <list>
         <ServerConfiguration>
+          <option name="label" value="fsblog" />
           <option name="serverUrls">
             <list>
-              <option value="localhost:17017" />
+              <option value="localhost:27017" />
             </list>
           </option>
+          <option name="shellWorkingDir" value="$PROJECT_DIR$/db" />
           <option name="sshTunnelingConfiguration">
             <SshTunnelingConfiguration />
           </option>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    <link rel="stylesheet" href=/public/css/bootstrap-theme.min.css type="text/css">
+    <script src="/public/js/jquery-3.3.1.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/index.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<h1>小爽博客</h1>
+
+
+{% if userInfo._id %}
+
+{% if userInfo.isAdmin %}
+
+<p>管理员 ：{{userInfo.username}} 同志你好！</p>
+<a href="/admin"> 进入管理后台</a>
+{% else %}
+
+<div id="userInfo" align="right">
+    <p>登陆用户：{{userInfo.username}}</p>
+    <p>欢迎使用小爽博客 客户端</p>
+    <div><p id="exit" class="exit">退出</p></div>
+</div>
+
+
+{% block content%}
+
+{% endblock %}
+
+{% endif %}
+
+{% else %}
+
+<div id="registerBox">
+    <span>用户名 ：</span>
+    <input type="text" name="username">
+    <br>
+    <span>密&nbsp&nbsp&nbsp码 ：</span>
+    <input type="password" name="password">
+    <br>
+    <div>
+
+        <button>注册</button>
+        <p class="text_area">已有账号，去登陆</p>
+    </div>
+</div>
+
+
+<div id="loginBox">
+    <span>用户名 ：</span>
+    <input type="text" name="username">
+    <br>
+    <span>密&nbsp&nbsp&nbsp码 ：</span>
+    <input type="password" name="password">
+    <br>
+    <div>
+
+        <button>登陆</button>
+        <p class="text_area">我第一次来，去注册</p>
+    </div>
+</div>
+
+{%endif%}
+
+
+</body>
+</html>

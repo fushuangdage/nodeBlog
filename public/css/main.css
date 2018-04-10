@@ -1,3 +1,45 @@
 body{
     background:white;
 }
+
+.text_area{
+    color: deeppink;
+}
+
+button{
+    float: left;
+    margin-right: 30px;
+}
+
+
+#registerBox{
+    display: none;
+}
+
+.exit{
+    display: block;
+    color: #f60;
+    background: #666;
+    width: 50px;
+}
+.contentBox{
+    margin: 30px;
+    background: #999999;
+}
+.readArticle{
+    background: orange;
+}
+.article_container{
+    background: #e3e3e3;
+    width: auto;
+    height: 600px;
+    margin: 50px;
+}
+.article_evaluation{
+    background: #e3e3e3;
+    width: auto;
+    height: min-content;
+}
+.gravity_right{
+    float: right;
+}

@@ -1,0 +1,34 @@
+{% extends 'base_layout.html'%}
+
+{% block main %}
+
+<ol>
+    <li><a href="/">管理首页</a></li>
+
+    <li><span>用户列表</span></li>
+
+    <h3>用户列表</h3>
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <td>ID</td>
+            <td>用户名：</td>
+            <td>密 码：</td>
+            <td>是否是管理员 ：</td>
+        </tr>
+        {% for user in users %}
+
+        <tr>
+            <td>{{user._id.toString()}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.isAdmin}}</td>
+        </tr>
+        {% endfor%}
+
+    </table>
+
+    {% include 'page.html' %}
+</ol>
+
+{% endblock%}
